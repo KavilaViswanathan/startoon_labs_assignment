@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h5><- View Patient</h5>
+        </header>
+        <section class="profile-section">
+            <div class="profile-container">
+                <div class="profile-details">
+                    <p>S.Meena, F/23</p>
+                    <p>Patient ID: 87 20200727153457</p>
+                </div>
+                <div class="profile-picture">
+                    <img src="https://clipground.com/images/profile-logo-3.png" alt="Profile Picture">
+                </div>
+            </div>
+            <div class="goal-reached-box">
+                <h2>Goal Reached</h2>
+                <div class="progress-wheel-wrapper">
+                    <div class="pw-body">
+                        <div class="pw-circle" id="progressWheelCircle"></div>
+                        <div class="pw-circle-overlay">
+                            <span class="pw-value-label" id="progressWheelLabel">45</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="medical-person-section">
+            <div class="profile-details">
+                <p><strong>Phone no.:</strong> <img src="http://www.clipartbest.com/cliparts/ncE/B7X/ncEB7Xgji.png"> 802233445</p>
+                <p><strong>Mail ID:</strong> <img src="https://static.vecteezy.com/system/resources/previews/000/581/999/original/email-icon-vector-illustration.jpg" alt=""> meenarabinsachin2@gmail.com</p>
+                <p><strong>Affected side:</strong> Bilateral</p>
+                <p><strong>Condition:</strong> Ortho</p>
+                <p><strong>Specialty:</strong> Osteoarthritis</p>
+            </div>
+        </section>
+        <section>
+            <h5>Medical History</h5>
+            <p>Hypertension, DM, Hypothyroidism</p>
+        </section>
+    </div>
+    <script>
+      var maxValue = 100;
+      var minValue = 0;
+      function rotateWheel(value){
+         if(value < minValue){
+            return false;
+         }
+         var element = document.getElementById('progressWheelCircle');
+         document.getElementById('progressWheelLabel').innerHTML = value;
+         var percentage = (value / maxValue) * 180 + 180;
+         element.style.transform = 'rotate(' + percentage + 'deg)';
+      }
+    </script>
+</body>
+</html>
